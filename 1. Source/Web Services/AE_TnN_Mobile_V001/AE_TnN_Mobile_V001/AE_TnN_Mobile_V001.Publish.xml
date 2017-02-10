@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Abeo-Projects\LawMini\1. Source\WS_Published" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="05/10/2016 11:47:29" />
+    <file relUrl="bin/AE_TnN_Mobile_BLL.dll" publishTime="05/26/2016 19:17:35" />
+    <file relUrl="SPAMobile.asmx" publishTime="08/11/2015 10:32:55" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="05/10/2016 11:47:29" />
+    <file relUrl="Web.config" publishTime="05/26/2016 18:08:21" />
+    <file relUrl="bin/AE_TnN_Mobile_Common.dll" publishTime="05/26/2016 18:07:47" />
+    <file relUrl="bin/AE_TnN_Mobile_V001.pdb" publishTime="05/26/2016 19:17:36" />
+    <file relUrl="bin/AE_TnN_Mobile_V001.dll" publishTime="05/26/2016 19:17:36" />
+    <file relUrl="packages.config" publishTime="05/10/2016 11:47:30" />
+    <file relUrl="bin/AE_TnN_Mobile_BLL.pdb" publishTime="05/26/2016 19:17:34" />
+    <file relUrl="bin/AE_TnN_Mobile_Common.pdb" publishTime="05/26/2016 18:07:47" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAWmini</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
+	<link href="assets/css/datepicker.css" rel="stylesheet"/>
+	
+	
+	
+	<!-- Loading Angular libs-->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+		 <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lib/angular.js"></script>
+    <script src="assets/js/lib/ui-bootstrap.js"></script>
+    <script src="assets/js/lib/ui-bootstrap-tpls-0.9.0.js"></script>
+    <script src="assets/js/lib/angular-cookies.js"></script>
+	<script src="assets/js/bootstrap-datepicker.js"></script>
+
+
+
+
+
+<!-- angular js -->
+
+    <script src="assets/js/config/app.js"></script>
+    <script src="assets/js/services/util_factory.js" ></script>
+	<script src="assets/js/services/document_service.js" ></script>
+	<script src="assets/js/ctrl/main_ctrl.js" ></script>
+	<script src="assets/js/ctrl/timesheet_ctrl.js" ></script>
+	
+<script src="assets/js/bootbox.min.js"></script>
+</head>
+
+<body  ng-app="myApp" >
+    <div id="wrapper"  ng-controller="main">
+	<div ng-include src="'templates/topnav.html'"></div>
+        
+        <!--/. NAV TOP  -->
+        
+		<div  ng-include src="'templates/sidenav.html'"></div>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" ng-controller="timesheet_ctrl">
+            <div id="page-inner" >
+<div class="row" style="color:#FFFFFF;margin-bottom:5px;">
+			<div class="col-sm-1" style="vertical-align:middle">
+			<h3>MATTER</h3>
+			</div>
+			<div class="col-sm-3">
+                  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                           File Type</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" ng-model="data.CaseType"  name=""/> </div>
+                  </div>
+				  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                            File No</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" ng-model="data.CaseFileNo"  name=""/> </div>
+                  </div>
+				  
+                </div>
+                <div class="col-sm-3">            
+				  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                           KIV</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" ng-model="data.KIV"  name=""/> </div>
+                  </div>
+				  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                            Status</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" ng-model="data.CaseStatus"  name=""/> </div>
+                  </div>
+				  
+				  
+                </div>
+				
+				
+				<div class="col-sm-5">            
+				  
+				  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                            File Open Date</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-sm" ng-model="data.FileOpenDate"  name=""/> </div>
+                  </div>
+				  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">
+                            File Close Date</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control input-sm" ng-model="data.FileCloseDate"  name=""/> </div>
+                  </div>
+				  
+                </div>
+				
+				</div>
+				
+
+<div class="row" ng-init="Docpage=6">
+              <div ng-include src="'templates/docmenu.html'"></div>
+				</div>
+			
+		<div class="row" >
+						
+					
+						<div class="col-md-10 col-centered"  style="margin:0px auto;">
+					<div class="panel panel-default">
+						<div class="panel-heading" style="border-bottom:solid 1px #666666" ng-init="title='Expense'">
+							{{title}}
+						</div>
+						
+						<div class="panel-body">
+						<div align="right" style="margin:3px 0px 10px 0px;"><button ng-click="title='Expense'" class="btn btn-info" data-toggle="tab" href="#menu1">Expenses</button>&nbsp;&nbsp;&nbsp;<button   ng-click="title='Time Sheet'" class="btn btn-info" data-toggle="tab" href="#menu2">Time</button></div>
+						
+						
+						&nbsp;
+						
+						
+						<div class="tab-content">
+  
+  <div id="menu1" class="tab-pane fade in active">
+    <div class="form-body">
+                <div class="col-lg-6">
+                  <div class="form-group">
+				
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Date <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control datepicker" ng-model="EXPENSE.Date"  id="Email1" placeholder="Date">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Currency <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" ng-model="EXPENSE.Curr"  class="form-control ng-pristine ng-untouched ng-valid" id="inputEmail3" placeholder="Currency">
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Expense<span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+						<select ng-model="EXPENSE.Expense"  class="form-control" >
+						<option  ng-repeat="d in Expensdrop.EXPENSE" value="{{d.ItemCode}}">{{d.Details}}</option>
+						
+						</select>
+						
+                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Remark</label>
+                        <div class="col-sm-8">
+                            <input type="text" ng-model="EXPENSE.Remarks" class="form-control ng-pristine ng-untouched ng-valid" id="Email3" placeholder="Remark">
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Chargeable amount <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" ng-model="EXPENSE.Amount"  class="form-control ng-pristine ng-untouched ng-valid" id="Email4" placeholder="Amount">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            File</label>
+                        <div class="col-sm-8">
+                            <input type="file"  class="form-control" id="Email5" placeholder="Select">
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div style="float:right" align="center">
+                <span>
+                    <button class="btn btn-success ng-binding" ng-click="exsave();">Save</button>               
+                    
+                    </span>
+                <span><button class="btn btn-danger" ng-click="exreset();">Cancel</button></span> 
+                </div>
+				<div class="row top-buffer"></div>
+				<div style="float:left;
+    width: 100%;">
+				<table width="100%" class="table table-bordered" border="0" cellspacing="5" cellpadding="5">
+  <tr style="background:#33b5e5;color:#FFFFFF;">
+    <th width="15%"><div align="center">Date</div></th>
+    <th width="14%"><div align="center">Expense</div></th>
+    <th width="21%"><div align="center">Chargeable Amount </div></th>
+	<th width="4%"><div align="center">Currency</div></th>
+	<th width="27%"><div align="center">Remark</div></th>
+	<th width="4%"><div align="center"><i class="fa fa-file-text" aria-hidden="true"></i> </div></th>
+	<th colspan="2"><div align="center">Action</div></th>
+	</tr>
+  
+  <tr ng-repeat="d in exarray.EXPENSE">
+     <td>{{d.Date}}</td>
+    <td><div align="center">{{d.Expense}}</div></td>
+    <td><div align="center">{{d.Expense1}}</div></td>
+	<td><div align="center">{{d.Curr}}</div></td>
+	<td><div align="center">{{d.Remarks}}</div></td>
+	<td align="center"><a href="#"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></td>
+	<th><div align="center"><button class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></button></div></th>
+	<th><div align="center"><button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></button></div></th>
+  </tr>
+</table>
+</div>
+            </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+   <div class="form-body">
+                <div class="col-lg-6">
+                  <div class="form-group">
+				 
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Date <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" ng-model="TIME.Date" class="form-control ng-pristine ng-untouched ng-valid" id="Email1" placeholder="Date">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Duration <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text"  ng-model="TIME.Dur" class="form-control ng-pristine ng-untouched ng-valid" id="inputEmail3" placeholder="Duration">
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+				  
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Task<span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+						<select ng-model="TIME.Task"  class="form-control" >
+						<option  ng-repeat="d in LawyerFeedrop.TIME" value="{{d.ItemCode}}">{{d.Details}}</option></select>
+						
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Billable</label>
+                        <div class="col-sm-8">
+                            <input name="" type="checkbox"  ng-model="TIME.Billable" value="" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Task Discription <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control " id="Email4" placeholder="Task Discription">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                           Private Remarks</label>
+                        <div class="col-sm-8">
+                            <input type="text"  class="form-control" ng-model="TIME.Remarks"  id="Email5" placeholder="Remarks">
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                           Billable Unit</label>
+                        <div class="col-sm-8">
+                            <input type="text"  class="form-control" ng-model="TIME.BillUnit"  id="Email5" placeholder="Unit">
+                        </div>
+                    </div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div style="float:right" align="center">
+                <span>
+                    <button class="btn btn-success ng-binding" ng-click="timesave();">Save</button>               
+                    
+                    </span>
+                <span><button class="btn btn-danger" ng-click="timereset();">Cancel</button></span> 
+                </div>
+				
+				<div class="row top-buffer"></div>
+				<div style="float:left;
+    width: 100%;">
+				<table width="100%" class="table table-bordered" border="0" cellspacing="5" cellpadding="5">
+  <tr style="background:#33b5e5;color:#FFFFFF;">
+    <th><div align="center">Date</div></th>
+	<th><div align="center">Task</div></th>
+    <th><div align="center">Description OF task</div></th>
+    <th><div align="center">Duration </div></th>
+	<th><div align="center">Billable Unit</div></th>
+	<th><div align="center">Billable Amount </div></th>
+	<th><div align="center">Remark </div></th>
+	<th colspan="2"><div align="center">Action</div></th>
+	</tr>
+  <tr  ng-repeat="d in timearray.TIME">
+    <td>{{d.Date}}</td>
+    <td><div align="center">{{d.Task}}</div></td>
+    <td><div align="center"></div></td>
+	<td><div align="center">{{d.Dur}}</div></td>
+	<td><div align="center">{{d.BillUnit}}</div></td>
+	<td><div align="center">{{d.BillableAmount}}</div></td>
+	<td><div align="center"></div></td>
+	<th><div align="center"><button class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></button></div></th>
+	<th><div align="center"><button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></div></th>
+  </tr>
+ 
+</table>
+</div>
+            </div>
+  </div>
+</div>
+
+
+
+							
+
+
+
+						</div>
+					</div>  
+					</div>
+					
+				</div> 
+			 
+			
+		
+		
+		
+				
+	
+			
+		
+				<footer>
+				
+        
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+	 <script type="text/javascript">        $('.datepicker').datepicker('autoclose','true')</script>
+
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	 
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+	
+	
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+	
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAWmini</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
+	
+	
+	
+	<!-- Loading Angular libs-->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+		 <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lib/angular.js"></script>
+    <script src="assets/js/lib/ui-bootstrap.js"></script>
+    <script src="assets/js/lib/ui-bootstrap-tpls-0.9.0.js"></script>
+    <script src="assets/js/lib/angular-cookies.js"></script>
+
+
+
+
+
+<!-- angular js -->
+
+    <script src="assets/js/config/app.js"></script>
+    <script src="assets/js/services/util_factory.js" ></script>
+	<script src="assets/js/services/ACS_service.js" ></script>
+	<script src="assets/js/ctrl/main_ctrl.js" ></script>
+	<script src="assets/js/ctrl/addcaseone_ctrl.js" ></script>
+	
+<script src="assets/js/bootbox.min.js"></script>
+</head>
+
+<body  ng-app="myApp" >
+    <div id="wrapper"  ng-controller="main">
+	<div ng-include src="'templates/topnav.html'"></div>
+        
+        <!--/. NAV TOP  -->
+        
+		<div  ng-include src="'templates/sidenav.html'"></div>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" ng-controller="addcaseone_ctrl" style="background: #32C2CD url(assets/img/appbg.png) !important">
+            <div id="page-inner" >
+
+
+			
+		<div class="row" >
+						
+					
+						<div class="col-md-10 col-centered"  style="margin:0px auto;">
+					<div class="panel panel-default">
+						<div class="panel-heading" style="border-bottom:solid 1px #666666">
+							ADD MATTER 
+						</div>
+						
+						<div class="panel-body">
+						
+						<div class="form-body">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-6 control-label">
+                            Acting for ? <span class="text-danger">*</span></label>
+                        <div class="col-sm-6">
+                            <label> <input name="acting" type="radio"  ng-model="acting" value="p"> Plaintiff</label> </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        
+                        <div class="col-sm-8">
+                            <label> <input name="acting" type="radio"  ng-model="acting" value="d"> Defendant</label>
+                        </div>
+                    </div>
+                </div>
+               <div class="top-buffer"></div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Matter</label>
+                        <div class="col-sm-8">
+                            <textarea name="matter"  ng-model="matter" class="form-control" ></textarea>
+                        </div>
+                    </div>
+                </div>
+              <div class="top-buffer"></div>
+             
+				<div >
+				<table width="100%" class="table table-bordered" border="0" cellspacing="5" cellpadding="5">
+  <tr style="background:#33b5e5;color:#FFFFFF;">
+    <th><div align="center">Member ID</div></th>
+    <th><div align="center">Member Name</div></th>
+    <th><div align="center">Timesheet</div></th>
+	<th><div align="center">Blog</div></th>
+	<th><div align="center">Files</div></th>
+	<th><div align="center">Details </div></th>
+	<th colspan="2"><div align="center">Action</div></th>
+	</tr>
+  <tr>
+    <td align="center">12</td>
+    <td><div align="center">Thomas</div></td>
+    <td><div align="center">Read</div></td>
+	<td><div align="center">Read</div></td>
+	<td><div align="center">Read</div></td>
+	<td><div align="center">Write</div></td>
+	<th><div align="center"><button class="btn btn-success">Edit</button></div></th>
+	<th><div align="center"><button class="btn btn-danger">Delete</button></div></th>
+  </tr>
+  <tr ng-repeat="d in usersarray">
+    <td align="center">{{d.MemebrID}}</td>
+    <td><div align="center">{{d.MemeberName}}</div></td>
+    <td><div align="center"></div></td>
+	<td><div align="center"></div></td>
+	<td><div align="center"></div></td>
+	<td><div align="center"></div></td>
+	<th><div align="center"><button class="btn btn-success">Edit</button></div></th>
+	<th><div align="center"><button class="btn btn-danger">Delete</button></div></th>
+  </tr>
+</table>
+</div>
+<div align="right"><button class="btn btn-info" ng-click="adduser();"><i class="fa fa-plus" aria-hidden="true"></i> Add User</button></div>
+<div align="center"><a href="addcase2.html"><button class="btn btn-success btn-lg">Confirm </button></a></div>
+            </div>
+						
+
+
+
+							
+
+
+
+						</div>
+					</div>  
+					</div>
+					
+				</div> 
+			 
+			
+		
+		
+		
+				
+	
+			
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content" >
+      <div class="modal-header">        
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Any One Record</h4>
+      </div>
+      <div class="modal-body" style="overflow:auto;height:400px;">
+        <table width="100%" border="0" class="table table-bordered table-responsive" cellspacing="5" cellpadding="5">
+  <tr>
+    <td>Select</td>
+    <td>Id</td>
+    <td>Name</td>
+  </tr>
+   <tr>
+    <td>Search By Name</td>
+    <td>:</td>
+    <td><input type="text" ng-model="search.MemeberName"></td>
+  </tr>
+  <tr ng-repeat="d in users | filter:search">
+    <td><input type="checkbox" name="ok" ng-model="d.selected" /></td>
+    <td>{{d.MemebrID}}</td>
+    <td>{{d.MemeberName}}</td>
+  </tr>
+</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-info" ng-click="addselecteduser();" >Add</button>
+      </div>
+    </div>
+
+  </div>
+</div>		
+    <!-- Modal -->		<footer>
+				
+        
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	 
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+	
+	
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+	
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+
+</body>
+
+</html>

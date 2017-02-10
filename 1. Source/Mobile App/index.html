@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAWmini</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
+	
+	
+	
+	<!-- Loading Angular libs-->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+		 <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lib/angular.js"></script>
+    <script src="assets/js/lib/ui-bootstrap.js"></script>
+    <script src="assets/js/lib/ui-bootstrap-tpls-0.9.0.js"></script>
+    <script src="assets/js/lib/angular-cookies.js"></script>
+
+
+
+
+
+<!-- angular js -->
+
+    <script src="assets/js/config/app.js"></script>
+    <script src="assets/js/services/util_factory.js" ></script>
+	<script src="assets/js/services/dashbord_service.js" ></script>
+	<script src="assets/js/ctrl/main_ctrl.js" ></script>
+	<script src="assets/js/ctrl/dashbord_ctrl.js" ></script>
+	
+<script src="assets/js/bootbox.min.js"></script>
+</head>
+
+<body  ng-app="myApp" >
+    <div id="wrapper"  ng-controller="main">
+	<div ng-include src="'templates/topnav.html'"></div>
+        
+        <!--/. NAV TOP  -->
+        
+		<div  ng-include src="'templates/sidenav.html'"></div>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" ng-controller="dashbord_ctrl" >
+            <div id="page-inner" >
+
+
+              
+				
+				<div class="row">
+						
+					
+						<div class="col-md-10 col-centered">
+					<div class="panel panel-default">
+						<div class="panel-heading" style="border-bottom:solid 1px #666666">
+							TARGET BENCHMARK
+						</div>
+						<div class="panel-body">
+							<table width="100%" class="table borderless" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td>&nbsp;</td>
+    <td><div align="center"><strong>THIS MONTH </strong></div></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><div align="center"><strong>LAST MONTH </strong></div></td>
+  </tr>
+  <tr>
+    <td>New Cases </td>
+    <td><div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"> {{ncthismonth}}12  </div>
+</div></td>
+    <td>&nbsp;</td>
+    <td>New Cases </td>
+    <td><div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"> {{nclastmonth}}11 </div>
+</div></td>
+  </tr>
+  
+  <tr>
+    <td>Closed Cases </td>
+    <td> <div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">{{ccthismonth}}22  </div></div></td>
+    <td>&nbsp;</td>
+    <td>Closed Cases </td>
+    <td><div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">{{cclastmonth}}33  </div></div></td>
+  </tr>
+</table>
+
+						</div>
+					</div>  
+					</div>
+					
+				</div> 
+			 
+				
+		<div class="row" >
+						
+					
+						<div class="col-md-10 col-centered"  style="margin:0px auto;">
+					<div class="panel panel-default">
+						<div class="panel-heading" style="border-bottom:solid 1px #666666">
+							YOUR SCORES
+						</div>
+						
+						<div class="panel-body">
+							<table width="100%" class="table table-bordered" border="0" cellspacing="5" cellpadding="5">
+  <tr style="background:#33b5e5;color:#FFFFFF;">
+    <th>&nbsp;</th>
+    <th><div align="center">THIS MONTH </div></th>
+    <th><div align="center">LAST MONTH </div></th>
+  </tr>
+  <tr>
+    <td>TURNAROUND</td>
+    <td><div align="center">10</div></td>
+    <td><div align="center">123</div></td>
+  </tr>
+  <tr>
+    <td>TOTAL OUTPUT </td>
+    <td><div align="center">200</div></td>
+    <td><div align="center">33</div></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="33%"><div align="center">
+        <a href="openc.html"><button class="btn btn-lg btn-danger" >12</button></a>
+    </div></td>
+    <td width="35%"><div align="center">
+        <a href="openc.html"><button class="btn btn-lg btn-info" >32</button></a>
+    </div></td>
+    <td width="32%"><div align="center">
+      <a href="openc.html"><button class="btn btn-lg btn-success" >21</button></a>
+    </div></td>
+  </tr>
+  <tr>
+    <td><div align="center">Prority Case Outstanding </div></td>
+    <td><div align="center">For Your Action </div></td>
+    <td><div align="center">Open Cases </div></td>
+  </tr>
+</table>
+
+<div align="center"><a href="#" onClick="window.MyCls.changeActivity()"> Phone Call example</a></div>
+						</div>
+					</div>  
+					</div>
+					
+				</div> 
+			 
+			
+		
+		
+		
+				
+	 <!-- Modal -->
+<div id="myModal"  class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 95%;">
+
+    <!-- Modal content-->
+    <div class="modal-content" >
+      <div class="modal-header">        
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Any any Record</h4>
+      </div>
+      <div class="modal-body" style="overflow:auto;height:400px;">
+        <table width="100%" border="0" class="table table-bordered table-responsive table-hover" cellspacing="5" cellpadding="5">
+  <tr  style="background:#33b5e5;color:#FFFFFF;">
+    <td>File N</td>
+    <td>Related File No</td>
+    <td>Branch Code</td>
+	<td>File Type</td>
+	<td>Matter</td>
+	<td>Plaintiff v Defendant</td>
+	<td>Represent</td>
+	<td>Lead Legal</td>
+	<td>Status</td>
+	<td>File Open Date</td>
+	<td>File Close Date</td>
+  </tr>
+   <tr ng-repeat="d in caselist" ng-click="godoc(d.CaseFileNo);">
+    <td>{{d.CaseFileNo}}</td>
+    <td>{{d.RelatedFileNo}}</td>
+    <td>{{d.BranchCode}}</td>
+	<td>{{d.CaseType}}</td>
+	<td>{{d.ClientName}}</td>
+	<td> </td>
+	<td> </td>
+	<td> </td>
+	<td>{{d.Status}}</td>
+	<td>{{d.FileOpenedDate}}</td>
+	<td>{{d.FileClosedDate}}</td>
+  </tr>
+ 
+</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+			
+		
+				<footer>
+				
+        
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	 
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+	
+	
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+	
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+
+</body>
+
+</html>
